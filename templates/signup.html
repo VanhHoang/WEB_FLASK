@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>SIGN Up</h1>
+    <h2>_____________</h2>
+    <h3>Vui long dien thong tin </h3>
+    <form action="{{ url_for('hello')}}" method="post">
+        <h4>Username</h4>
+        <input type="text" placeholder="Username" name="txt_username">
+        <h4>Password</h4>
+        <input type="text" placeholder="PassWord" name="txt_password">
+        <h4>Nhap lai Password</h4>
+        <input type="text" placeholder="RePassWord" name="txt_password_re">
+        <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

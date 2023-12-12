@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./general.css" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/index.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/general.css')}}">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contain">
+      <!-- ------ header ----- -->
+      <div class="header">
+        <div class="header_left">
+          <i class="fa-solid fa-bowl-food"></i>
+          <h3>DUAN FOOD</h3>
+        </div>
+        <div class="header_right">
+          {% block name %}
+          <h3>Login</h3>
+          {%  endblock %}
+          <i class="fa-regular fa-user"></i>
+        </div>
+      </div>
+
+      <!-- --- menu -------  -->
+      <div class="menu">
+        <ul class="menu_left">
+          <li>
+            <a style="text-decoration: none" href="#home">Trang chủ </a>
+          </li>
+
+          <li>
+            <a style="text-decoration: none" href="#search">Sản phẩm </a>
+          </li>
+          <li>
+            <a style="text-decoration: none" href="#collect">Bộ sưu tập </a>
+          </li>
+          <li>
+            <a style="text-decoration: none" href="#Feedback">Feedback </a>
+          </li>
+          <li>
+            <a style="text-decoration: none" href="#footer">Contract </a>
+          </li>
+        </ul>
+
+        <div class="menu_right">
+          <div>
+            <input type="text" placeholder="Tìm kiếm " />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+
+      <!-- -- header-img --- -->
+      <div class="img">
+        <img id="home" src="{{ url_for('static' ,filename='/img/header-img1.webp')}}" alt="#" />
+      </div>
+
+      <!-- -- search  -->
+
+      <div id="search" class="search">
+        <h2>--- Bạn đang tìm kiếm ? ---</h2>
+
+        <div class="search-list">
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/fastfod.jpeg')}}" alt="#" />
+            <p>Đồ ăn nhanh</p>
+          </div>
+          <div>
+            <img
+              class="search-img"
+              src="{{ url_for('static' ,filename='/img/co-nen-an-cac-loai-do-an-song.jpg')}}"
+              alt="#"
+            />
+            <p>Đồ sống</p>
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/dochin.jpeg')}}" alt="#" />
+            <p>Đồ chín</p>
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/nguyelieu.jpg')}}" alt="#" />
+            <p>Nguyên liệu</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- item  -->
+
+      <div id="collect" class="search search-item">
+        <h3 class="list-item">Sản phẩm nổi bật</h3>
+
+        <div class="search-list">
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/1.jpeg')}}" alt="#" />
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/2.jpeg')}}" alt="#" />
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/3.jpeg')}}" alt="#" />
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/4.jpg')}}" alt="#" />
+          </div>
+        </div>
+        <div class="search-list">
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/5.jpeg')}}" alt="#" />
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/6.jpeg')}}" alt="#" />
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/7.jpeg')}}" alt="#" />
+          </div>
+          <div>
+            <img class="search-img" src="{{ url_for('static' ,filename='/img/8.jpeg')}}" alt="#" />
+          </div>
+        </div>
+        <div class="div-btn">
+          <div class="btn">Xem thêm</div>
+        </div>
+      </div>
+
+      <!-- --- Feedback --  -->
+
+      <!-- <div id="Feedback" class="search feedback-item">
+        <h2>--- Feedback ---</h2>
+        <p>Cùng xem sản phẩm thực tế được khách hàng sử dụng và phản hồi</p>
+
+        <div class="search-list">
+          <div>
+            <img class="search-img" src="../img/feedback1.jpg" alt="#" />
+            <h4 class="feedback-h4">Shiper thân thiên lắm</h4>
+          </div>
+          <div>
+            <img class="search-img" src="../img/feedback2.jpeg" alt="#" />
+            <h4 class="feedback-h4">Đồ ăn ngon và sạch</h4>
+          </div>
+          <div>
+            <img class="search-img" src="../img/feedback3.jpg" alt="#" />
+            <h4 class="feedback-h4">Ship nhanh , ngon lắm</h4>
+          </div>
+          <div>
+            <img class="search-img" src="../img/feedback4.jpeg" alt="#" />
+            <h4 class="feedback-h4">
+              Đã đặt ở shop này nhiều rồi , bao ngon sạch sẽ
+            </h4>
+          </div>
+        </div>
+
+        <div class="div-btn btn-feedback">
+          <div class="btn">Xem thêm</div>
+        </div>
+      </div> -->
+
+      <!-- --- footer ---  -->
+
+      <div id="footer" class="footer">
+        <div class="footer-left">
+          <i class="fa-solid fa-phone"> <p>123456789</p></i>
+          <i class="fa-solid fa-location-dot"><p>x1 Nga sơn</p></i>
+          <i class="fa-regular fa-envelope"><p>Duanfood@gmail.com</p></i>
+        </div>
+        <div class="footer-right">
+          <i class="fa-brands fa-facebook"><p>Truongduan</p></i>
+          <i class="fa-brands fa-youtube"><p>Duan food supper</p></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

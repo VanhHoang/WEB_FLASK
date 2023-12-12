@@ -1,0 +1,19 @@
+Phân chia nhiệm vụ:
+
+* Giao diện:
+- Hoàng Việt Anh
+
+- Trương Văn Duẩn
+
+- Bùi Kim Yến
+
+Chức năng:
+
+- 
+ 
+-
+
+-
+
+Note :
+- Datetime (session)
