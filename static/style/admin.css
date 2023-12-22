@@ -1,0 +1,84 @@
+.menu_left a {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+table {
+    margin-top: 10px;
+}
+
+.plus_container {
+    display: flex;
+    justify-content: end;
+      
+}
+
+.plus_icon {
+    padding: 10px;
+    background-color: red;
+    margin-right: 25px;
+    color: white;
+    margin-top: 16px;
+}
+
+.plus_icon:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(141, 117, 117);
+  
+}
+
+.layer {
+    position: absolute;
+    padding: 100px;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+  
+   
+   
+}
+
+.layer.active {
+    display: block;
+}
+
+.form_food {
+    position: absolute;
+    top: 200px;
+    left: 30%;
+    background: #446364;
+    padding: 55px;
+    color: white;
+    width: 600px;
+
+}
+
+
+.admin_container {
+    width: 1100px;
+
+    height: 900px;
+    /* height: auto; */
+    margin: 0 auto;
+    background-color: #83c387;
+    border-radius: 3px;
+}
+
+.layer-icon {
+    position: absolute;
+    top: 26%;
+    right: 19%;
+    z-index: 1;
+    color: white;
+}
+
+.layer-icon:hover {
+    color: wheat;
+    cursor: pointer;
+}
+
+

@@ -6,9 +6,9 @@
 <div class="login" style="height:400px;margin-left: 25%;width: 500px;margin-top: 50px;
 margin-bottom: 50px;background-color: aliceblue;">
     
-    <div class="dangnhap" style="margin-bottom: 40px;text-align: center;"><h2  >ĐĂNG NHẬP</h2></div>
+    <div class="dangnhap" style="margin-bottom: 40px;text-align: center;"><h2  >ĐĂNG KÝ</h2></div>
     <div style="margin-left: 50px;">
-        <form action="/login" method="post">
+        <form action="/register" method="post">
             <label for="name">Name</label>
             <br>
             <input type="text" name="name" id="name"></input>
@@ -17,12 +17,20 @@ margin-bottom: 50px;background-color: aliceblue;">
             <br>
             <input type="password" name="password" id="password"></input>
             <br>
+            <label for="email">Email</label>
             <br>
-            <input type="submit"  name="login" id="" value="ĐĂNG NHẬP"> 
+            <input type="text" name="email" id="email"></input>
+            <br>
+            <label for="phone">Phone</label>
+            <br>
+            <input type="text" name="phone" id="phone"></input>
+            <br>
+            <br>
+            <input type="submit"  name="login" id="" value="ĐĂNG KÝ"> 
         </form>
         <div class="form-dangnhap">
-            Bạn chưa có tài khoản?
-            <a class="form-des__text" href="{{url_for('register')}}">Đăng Ký</a>
+            Bạn đã có tài khoản?
+            <a class="form-des__text" href="{{url_for('login')}}">Đăng Nhập</a>
           </div>
     </div>
 </div>

@@ -1,0 +1,46 @@
+{%extends "admin.html" %} {% block content %}
+
+<div class="select_content">
+  <table class="table table-hover" id="searchResults">
+    <thead>
+      <tr>
+        <th scope="col">Stt</th>
+        <th scope="col">Tên khách hàng</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Giá sản phẩm</th>
+        <th scope="col">Số lượng</th>
+        <th scope="col">Số điện thoại</th>
+        <th scope="col">Email</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for item in books: %}
+
+      <tr>
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.product}}</td>
+        <td>{{item.number}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.name}}</td>
+
+        <td>
+          <button class="btn-primary">
+            <a style="color: white" href="/update_order/{{item.id}}">Sửa</a>
+          </button>
+        </td>
+        <td>
+          <button class="btn-warning">
+            <a style="color: white" href="/delete_order/{{item.id}}">Xóa</a>
+          </button>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

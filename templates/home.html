@@ -1,4 +1,188 @@
-{% extends 'index.html' %}
-{% block name %}
-<h3>{{context}}</h3>
+{%extends "base.html" %} {%block title%} {%endblock%} {%block content%}
+<!-- -- header-img --- -->
+<div class="img" id="home">
+  <div class="autoplay">
+    <img
+      src="https://buffetposeidon.com/storage/app/media/Kham-pha-am-thuc/01.2023/280123-hai-san-dep-da-buffet-poseidon-02.jpg"
+      alt="#"
+    />
+    <img
+      src="https://buffetposeidon.com/storage/app/media/Kham-pha-am-thuc/01.2023/280123-hai-san-dep-da-buffet-poseidon-01.jpg"
+      alt="#"
+    />
+    <img
+      src="https://statics.vincom.com.vn/xu-huong/chi_tiet_xu_huong/buffet-hai-san-sheraton-buffet-restaurant-(1)-1648800355.jpg"
+      alt="#"
+    />
+    <img
+      src="https://cafefcdn.com/203337114487263232/2023/2/28/photo-4-1677584260673378258417.jpeg"
+      alt="#"
+    />
+  </div>
+</div>
+
+<!--  search  -->
+
+<!-- <div id="search" class="search">
+  <h2>--- Bạn đang tìm kiếm ? ---</h2>
+
+  <div class="search-list">
+    <div>
+      <a href="#">
+        <img
+          class="search-img"
+          src="{{ url_for('static' ,filename='/img/logo_tom.jpg')}}"
+          alt="tom"
+        />
+        <p>Tôm</p>
+      </a>
+    </div>
+    <div>
+      <a href="#">
+        <img
+          class="search-img"
+          src="{{ url_for('static' ,filename='/img/logo_ca.jpg')}}"
+          alt="#"
+        />
+        <p>Cá</p>
+      </a>
+    </div>
+    <div>
+      <a href="#">
+        <img
+          class="search-img"
+          src="{{ url_for('static' ,filename='/img/logo_cua.jpg')}}"
+          alt="#"
+        />
+        <p>Cua</p>
+      </a>
+    </div>
+    <div>
+      <a href="#">
+        <img
+          class="search-img"
+          src="{{ url_for('static' ,filename='/img/logo_khac.jpg')}}"
+          alt="#"
+        />
+        <p>Khác</p>
+      </a>
+    </div>
+  </div>
+</div> -->
+
+<!-- item  -->
+
+<div id="collect" class="search search-item">
+  <h3 class="list-item">Danh sách sản phẩm</h3>
+
+  <div class="search-list-item">
+    {%for value in foods :%}
+    <div class="search_container">
+      <img class="search-img" src="{{value.img}}" alt="#" />
+
+      <span class="search_title"> {{value.name}} : {{value.price}} </span>
+    </div>
+    {%endfor%}
+  </div>
+
+  <div class="div-btn">
+    <div class="btn-more">Xem thêm</div>
+  </div>
+
+  <div class="layer">
+    <i class="fa-solid fa-x layer-icon"></i>
+
+    <form class="form_layer" method="POST" action="/book">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tên sản phẩm</label>
+        <input
+          id="name_product"
+          type="text"
+          class="form-control layer-content"
+          aria-describedby="emailHelp"
+          name="product"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Giá sản phẩm</label>
+        <input
+          type="text"
+          class="form-control layer-content"
+          id="name_price"
+          aria-describedby="emailHelp"
+          name="price"
+          value=""
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Số lượng </label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="number"
+        >
+          <option value="0"></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Họ và tên </label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          name="name"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Số điện thoại</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          name="phone"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Địa chỉ</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          name="address"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputPassword1"
+          name="email"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Đặt</button>
+    </form>
+  </div>
+</div>
+
 {%endblock%}

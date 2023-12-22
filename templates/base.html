@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='/style/index.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='/style/general.css')}}"
+    />
+
+    {%block title%} {%endblock%}
+  </head>
+  <body>
+    <div class="contain">
+      <!-- ------ header ----- -->
+      <div class="header">
+        <div class="header_left">
+          <img
+            style="width: 120px; height: 80px; padding: 13px"
+            src="//theme.hstatic.net/1000182631/1000966139/14/logo.png?v=831"
+            alt="Hải Sản Hoàng Gia"
+            class="img-responsive logoimg"
+          />
+        </div>
+        <div class="header_right">
+          {% block name %}
+          <h3>Login</h3>
+          {% endblock %}
+          <i><a class="fa-regular fa-user" href="{{url_for('login')}}"></a></i>
+        </div>
+      </div>
+
+      <!-- --- menu -------  -->
+      <div class="menu">
+        <ul class="menu_left">
+          <li>
+            <a style="text-decoration: none" href="{{url_for('trangchu')}}">Trang chủ </a>
+          </li>
+
+          <li>
+            <a style="text-decoration: none" href="#collect">Sản phẩm </a>
+          </li>
+
+
+          <li>
+            <a style="text-decoration: none" href="#footer">Liên Hệ </a>
+          </li>
+        </ul>
+
+        <div class="menu_right">
+          <div>
+            <input type="text" placeholder=" Tìm kiếm " />
+          </div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="logo fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+      {%block content%} {%endblock%}
+
+
+
+      <!--  footer  -->
+
+      <div id="footer" class="footer">
+        <div class="footer-left">
+          <i class="fa-solid fa-phone"> <p>123456789</p></i>
+          <i class="fa-solid fa-location-dot"><p>x1 Nga sơn</p></i>
+          <i class="fa-regular fa-envelope"><p>Duanfood@gmail.com</p></i>
+        </div>
+        <div class="footer-right">
+          <i class="fa-brands fa-facebook"><p>Truongduan</p></i>
+          <i class="fa-brands fa-youtube"><p>Duan food supper</p></i>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="{{url_for('static' , filename = '/js/home.js')}}"></script>
+    <script src="{{url_for('static' , filename = '/js/slider.js')}}"></script>
+  </body>
+</html>

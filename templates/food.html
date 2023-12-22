@@ -1,0 +1,88 @@
+{%extends "admin.html" %} {% block content %}
+<div class="select_content">
+  <div>
+    <div class="plus_container">
+      <i class="plus_icon fa-solid fa-plus"></i>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Stt</th>
+        <th scope="col">Mã sản phẩm</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Hình ảnh</th>
+        <th scope="col">Giá sản phẩm</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for value in foods :%}
+      <tr>
+        <th scope="row">{{value.id}}</th>
+        <td>{{value.msp}}</td>
+        <td>{{value.name}}</td>
+
+        <td><img style="width: 100px" src="{{value.img}}" /></td>
+        <td>{{value.price}} vnd</td>
+        <td>
+          <button class="btn-primary">
+            <a style="color: white" href="/update_food/{{ value.id }}"> Sửa</a>
+          </button>
+        </td>
+        <td>
+          <button class="btn-warning">
+            <a style="color: white" href="/delete_food/{{ value.id }}"> Xóa</a>
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="layer">
+  <i class="fa-solid fa-x layer-icon"></i>
+  <form class="form_food" method="POST" action="/food">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Mã sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        name="msp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Tên sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Ảnh sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="img"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Giá sản phẩm</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputPassword1"
+        name="price"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
