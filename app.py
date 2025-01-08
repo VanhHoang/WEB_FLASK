@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 
 # đường dẫn tới data base trên postgres
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:12345@localhost:5432/mydata"
+# "Database://username:password@address:port/database_name"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Hoangvietanh102@localhost:5432/flask"
 app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
 
 # todo được sử dụng để khởi tạo extension của cơ sở dữ liệu trong ứng dụng Flask
@@ -65,7 +66,7 @@ def create():
 
 def data():
     #  data  sản phẩm  mẫu
-    f = open('E:\WEB FLASK\\food.csv', encoding="UTF-8")
+    f = open('food.csv', encoding="UTF-8")
     data = csv.reader(f)
 
     next(data)  # Bỏ qua hàng đầu tiên chứa tiêu đề cột
@@ -242,6 +243,6 @@ def update_food_user():
 
 if __name__ == "__main__":
     with app.app_context():
-        # create()
-        # data()
+        create()
+        data()
         app.run(debug=True)
